@@ -9,7 +9,10 @@ import java.util.Map;
 public class Database {
     private Map<Integer, User> users = new HashMap<Integer, User>();
 
-    public void addUser(User user) {
+    public void addUser(User user) throws UserNotFoundException {
+        if (user == null) {
+            throw new UserNotFoundException("User with is missing an ID");
+        }
         users.put(user.getId(), user);
     }
 
@@ -22,12 +25,8 @@ public class Database {
 
 
 
-    public ArrayList<String> getUsers() {
-        ArrayList<String> names = new ArrayList<String>();
-        users.forEach((key,value) -> {
-            names.add(value.toString());
-        });
-        return names;
+    public Collection<User> getUsers() {
+        return users.values();
     }
 
 }

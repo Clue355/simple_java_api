@@ -20,13 +20,6 @@ public class Database {
         return users.get(id);
     }
 
-    public String getUserEmail(int id) throws UserNotFoundException {
-        if (users.get(id) == null) {
-            throw new UserNotFoundException("User with ID " + id + " not found.");
-        }
-        return users.get(id).getEmail();
-    }
-
 
 
     public ArrayList<String> getUsers() {

@@ -19,6 +19,11 @@ public class User {
         return this.id;
     }
 
+    public String getEmail() {
+
+        return (String) this.email;
+    }
+
     public String getName() {
         return this.name;
     }

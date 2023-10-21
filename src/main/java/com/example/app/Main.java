@@ -16,5 +16,6 @@ public class Main {
         User retrievedUser = database.getUser(2);
         System.out.println(retrievedUser.getName());
         System.out.println(database.getUsers());
+        System.out.println(retrievedUser.getEmail());
     }
 }
